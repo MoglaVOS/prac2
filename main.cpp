@@ -242,14 +242,16 @@ int main() {
                 //------------------------------------------------------------------------------------------------------
                 auto start = steady_clock::now();
                 for (int i = 0, k = 0; i < N; i++) {
-                    if (arr[i] == x) cout << "Введенное число находится в массиве с номером " << i << endl;
-                    k += 1;
+                    if (arr[i] == x) {
+                        cout << "Введенное число находится в массиве с номером " << i << endl;
+                        k += 1;
+                    }
                     if (k == 0 && i == 99) cout << "Введенное число не входит в массив\n";
                 }
                 auto endTime = steady_clock::now();
                 auto elapsed = duration_cast<nanoseconds>(endTime - start);
                 cout << "Перечисление элементов заняло  " << elapsed.count() << " наносекунд\n";
-                cout << "\nПродолжить цикл? 1 - да; 2 - нет\n";
+                cout << "\nПродолжить цикл? 1 - да; 0 - нет\n";
                 cin >> cycleseven;
             }
         }
